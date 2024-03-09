@@ -9,7 +9,10 @@ use App\Http\Requests\TodoRequest;
 class TodoController extends Controller
 {
     public function index(){
-        return view('todos.index');
+        $todos = Todo::all();
+        return view('todos.index',[
+            'todos'=> $todos
+        ]);
     }
 
     public function create(){
