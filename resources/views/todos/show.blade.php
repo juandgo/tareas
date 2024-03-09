@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                        <a href="{{ url()->previous() }}" class="btn btn-info btn-sm">Volver</a><br>
                     <b>El titulo de tu tarea es: </b> {{ $todo->title }}
                     <b>La descripción es: </b> {{ $todo->description }}
                 </div>

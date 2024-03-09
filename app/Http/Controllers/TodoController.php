@@ -31,4 +31,14 @@ class TodoController extends Controller
 
         return to_route('todos.index');
     }
+
+    public function show($id){
+        $todo = Todo::find($id);
+        if(!$todo){
+            return to_route('todos.index')->withError([
+                'error' => 'Incapaz de localizar la tarea'
+            ]);
+        }
+        return view('todos.show', ['todo' => $todo]);
+    }
 }

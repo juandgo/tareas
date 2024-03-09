@@ -52,7 +52,7 @@
                                                 @endif
                                             </td>
                                             <td id="outer">
-                                                <a class="inner btn btn-success btn-sm" href="">View</a>
+                                                <a class="inner btn btn-success btn-sm" href="{{ route('todos.show', $todo->id)}}">View</a>
                                                 <a class="inner btn btn-info btn-sm" href="">Edit</a>
                                                 <form action=""class="inner">
                                                     <input type="hidden" name="todo_id" value="{{ $todo->id }}">
