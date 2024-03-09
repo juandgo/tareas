@@ -9,26 +9,25 @@
 
                     <div class="card-body">
                         <h4>Editar Tarea</h4>
-                        <form>
+                        <form method="post" action="{{ route('todos.update')}}">
+                            @csrf
+                            @method('PUT')
+                            <input type="hidden" name="todo_id" value="{{ $todo->id }}">
                             <div class="mb-3">
                                 <label class="form-label">Titulo</label>
-                                <input type="test" name="title" class="form-control">
+                                <input type="test" name="title" class="form-control" value="{{ $todo->title }}">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Descripción</label>
                                 <textarea class="form-control" name="description" cols="5" rows="5">
-
+                                    {{ $todo->description }}
                                 </textarea>
                             </div>
-                            <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div>
+                  
                             <button type="submit" class="btn btn-primary">Actualizar</button>
                         </form>
 
 
-                        todo index page
                     </div>
                 </div>
             </div>
