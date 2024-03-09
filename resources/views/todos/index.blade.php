@@ -40,15 +40,17 @@
                             </div>
                         @endif
 
+                        <a class="btn btn-sm btn-info" href="{{ route('todos.create' )}}">Crear Tarea</a>
+
 
                         @if(count($todos) > 0)
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th>Titulo</th>
-                                        <th>Descripcion</th>
-                                        <th>Completed</th>
-                                        <th>Actions</th>
+                                        <th>Descripciòn</th>
+                                        <th>Estado</th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -58,17 +60,19 @@
                                             <td>{{ $todo->description }}</td>
                                             <td>
                                                 @if ($todo->is_completed == 1)
-                                                    <a class="btn btn-success btn-sm" href="">completed</a>
+                                                    <a class="btn btn-success btn-sm" href="">Completada</a>
                                                 @else
-                                                    <a class="btn btn-danger btn-sm" href="">incompleted</a>
+                                                    <a class="btn btn-danger btn-sm" href="">Incompleta</a>
                                                 @endif
                                             </td>
                                             <td id="outer">
-                                                <a class="inner btn btn-success btn-sm" href="{{ route('todos.show', $todo->id)}}">View</a>
-                                                <a class="inner btn btn-info btn-sm" href="{{  route('todos.edit', $todo->id) }}">Edit</a>
-                                                <form action=""class="inner">
+                                                <a class="inner btn btn-success btn-sm" href="{{ route('todos.show', $todo->id)}}">Ver</a>
+                                                <a class="inner btn btn-info btn-sm" href="{{  route('todos.edit', $todo->id) }}">Editar</a>
+                                                <form method="post" action="{{ route('todos.destroy')}}" class="inner">
+                                                    @csrf
+                                                    @method('DELETE')
                                                     <input type="hidden" name="todo_id" value="{{ $todo->id }}">
-                                                    <input type="submit" class="btn btn-danger btn-sm" value="Delete">
+                                                    <input type="submit" class="btn btn-danger btn-sm" value="Borrar">
                                                 </form>
                                             </td>
                                         </tr>

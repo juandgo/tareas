@@ -72,4 +72,18 @@ class TodoController extends Controller
         $request->session()->flash('alert-info','Tarea Acutalizada Exitosamente');
         return to_route('todos.index');
     }
+
+    public function destroy(Request $request){
+        $todo = Todo::find($request->todo_id);
+        if(!$todo){
+            request()->session()->flash('error','Incapaz de localizar la tarea');
+            return to_route('todos.index')->withError([
+                'error' => 'Incapaz de localizar la tarea'
+            ]);
+        }
+        // dd($todo);
+        $todo->delete();
+        $request->session()->flash('alert-success','Tarea Eliminada Exitosamente');
+        return to_route('todos.index');
+    }
 }
