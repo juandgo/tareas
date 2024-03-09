@@ -23,6 +23,14 @@
                                     {{ $todo->description }}
                                 </textarea>
                             </div>
+                            <div class="mb-3">
+                                <label for="">Estado</label>
+                                <select name="is_completed" class="form-control">
+                                    <option disabled selected>Selecciona la opción</option>
+                                    <option value="1">Completa</option>
+                                    <option value="0">Incompleta</option>
+                                </select>
+                            </div>
                   
                             <button type="submit" class="btn btn-primary">Actualizar</button>
                         </form>
