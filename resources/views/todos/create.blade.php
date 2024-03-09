@@ -8,6 +8,15 @@
                     <div class="card-header">App de Tareas</div>
 
                     <div class="card-body">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
                         <form method="post" action="{{ route('todos.store') }}">
                             @csrf
@@ -27,9 +36,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Crear</button>
                         </form>
-
-
-                        todo index page
+                        
                     </div>
                 </div>
             </div>
