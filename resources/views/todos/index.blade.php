@@ -9,7 +9,20 @@
 
                 <div class="card-body">
 
-
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th>Titulo</th>
+                            <th>Descripcion</th>
+                            <th>Completed</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                          </tr>
+                        </tbody>
+                      </table>
                     todo index page
                 </div>
             </div>

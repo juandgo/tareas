@@ -8,7 +8,9 @@
                     <div class="card-header">App de Tareas</div>
 
                     <div class="card-body">
-                        <form>
+
+                        <form method="post" action="{{ route('todos.store') }}">
+                            @csrf
                             <div class="mb-3">
                                 <label class="form-label">Titulo</label>
                                 <input type="test" name="title" class="form-control">
@@ -23,7 +25,7 @@
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Crear</button>
                         </form>
 
 

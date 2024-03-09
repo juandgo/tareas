@@ -8,6 +8,7 @@
                     <div class="card-header">App de Tareas</div>
 
                     <div class="card-body">
+                        <h4>Editar Tarea</h4>
                         <form>
                             <div class="mb-3">
                                 <label class="form-label">Titulo</label>
@@ -23,7 +24,7 @@
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary">Actualizar</button>
                         </form>
 
 
